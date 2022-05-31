@@ -14,7 +14,7 @@ function Navbar() {
                         <NavLink to='/'>User</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink to='/messaging'>Messaging</NavLink>
+                        <NavLink to='/contentcards'>Content Cards</NavLink>
                     </NavItem>
                 </NavMenu>
             </NavContainer>

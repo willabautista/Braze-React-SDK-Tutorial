@@ -6,8 +6,8 @@ function TitledInputBox({ title, v, setV }) {
 
     return (
         <Container>
-            <Text>{title}</Text>
-            <TextBox value={v} onChange={e => setV(e.target.value)} />
+            <div>{title}</div>
+            <input value={v} onChange={e => setV(e.target.value)} />
         </Container>
     );
 }
@@ -17,14 +17,6 @@ const Container = styled.div`
     flex-direction: row;
     width: 300px;
     justify-content: space-between;
-`;
-
-const Text = styled.div`
-
-`;
-
-const TextBox = styled.input`
-
 `;
 
 export default TitledInputBox

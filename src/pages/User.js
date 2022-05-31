@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import TitledInputBox from '../components/TitledInputBox';
 import KeyValueInputBox from '../components/KeyValueInputBox';
-
+import * as braze from "@braze/web-sdk";
 
 function User() {
-    // STATE
+
+    // HOOKS
 
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
@@ -32,65 +33,54 @@ function User() {
     const [purchaseProperties, setPurchaseProperties] = useState('')
 
 
-    // FUNCTIONS 
+    // FUNCTIONS
 
     const setStandardAttributes = () => {
-        /* TODO: add SDK method */
+        // TODO: add SDK methods 
+
         if (firstName) {
-            console.log(firstName)
         }
 
-        /* TODO: add SDK method */
         if (lastName) {
-            console.log(lastName)
         }
 
-        /* TODO: add SDK method */
         if (email) {
         }
 
-        /* TODO: add SDK method */
         if (country) {
         }
 
-        /* TODO: add SDK method */
         if (homeCity) {
         }
 
-        /* TODO: add SDK method */
         if (language) {
         }
 
-        /* TODO: add SDK method */
         if (gender) {
         }
 
-        /* TODO: add SDK method */
         if (phone) {
         }
 
-        /* TODO: add SDK method */
         if (birthday) {
         }
 
-        /* TODO: add SDK method */
         if (pushSub) {
         }
 
-        /* TODO: add SDK method */
         if (emailSub) {
         }
     }
 
     const setCustomAttribute = () => {
-        /* TODO: add SDK method */
+        // TODO: add SDK method 
         if (customAttributeKey && customAttributeValue) {
 
         }
     }
 
     const setCustomEvent = () => {
-        /* TODO: add SDK methods. */
+        // TODO: add SDK methods
         if (eventName) {
             if (eventProperties) {
 
@@ -102,14 +92,14 @@ function User() {
     }
 
     const setPurchaseEvent = () => {
-        /* TODO: add SDK methods. */
+        // TODO: add SDK methods
         if (productId && price) {
 
         }
     }
 
 
-    // RENDER
+    // RETURN
 
     return (
         <UserContainer>

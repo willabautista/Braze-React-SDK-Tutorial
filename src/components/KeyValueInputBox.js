@@ -7,17 +7,16 @@ function KeyValueInputBox({ k, setK, v, setV }) {
     return (
         <Container>
             <SectionContainer>
-                <Title>Name</Title>
-                <TextBox value={k} onChange={e => setK(e.target.value)} />
+                <div>Name</div>
+                <input value={k} onChange={e => setK(e.target.value)} />
             </SectionContainer>
             <SectionContainer>
-                <Title>Value</Title>
-                <TextBox value={v} onChange={e => setV(e.target.value)} />
+                <div>Value</div>
+                <input value={v} onChange={e => setV(e.target.value)} />
             </SectionContainer>
         </Container>
     );
 }
-
 
 const Container = styled.div`
     display: flex;
@@ -29,13 +28,6 @@ const Container = styled.div`
 const SectionContainer = styled.div`
     display: flex;
     flex-direction: column;
-`;
-
-const Title = styled.div`
-`;
-
-const TextBox = styled.input`
-
 `;
 
 export default KeyValueInputBox
