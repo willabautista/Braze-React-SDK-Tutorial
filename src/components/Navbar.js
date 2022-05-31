@@ -11,13 +11,10 @@ function Navbar() {
                 </LogoLink>
                 <NavMenu>
                     <NavItem>
-                        <NavLink to='/attributes'>Attributes</NavLink>
+                        <NavLink to='/'>User</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink to='/events'>Events</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink to='/purchases'>Purchases</NavLink>
+                        <NavLink to='/messaging'>Messaging</NavLink>
                     </NavItem>
                 </NavMenu>
             </NavContainer>
