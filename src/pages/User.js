@@ -5,9 +5,6 @@ import KeyValueInputBox from '../components/KeyValueInputBox';
 import * as braze from "@braze/web-sdk";
 
 function User() {
-
-    // HOOKS
-
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
@@ -32,11 +29,8 @@ function User() {
     const [quantity, setQuantity] = useState('')
     const [purchaseProperties, setPurchaseProperties] = useState('')
 
-
-    // FUNCTIONS
-
     const setStandardAttributes = () => {
-        // TODO: add SDK methods 
+        // TODO: set standard attributes 
 
         if (firstName) {
         }
@@ -73,14 +67,14 @@ function User() {
     }
 
     const setCustomAttribute = () => {
-        // TODO: add SDK method 
+        // TODO: set custom attributes
         if (customAttributeKey && customAttributeValue) {
 
         }
     }
 
     const setCustomEvent = () => {
-        // TODO: add SDK methods
+        // TODO: log custom events
         if (eventName) {
             if (eventProperties) {
 
@@ -92,18 +86,15 @@ function User() {
     }
 
     const setPurchaseEvent = () => {
-        // TODO: add SDK methods
+        // TODO: log purchase events
         if (productId && price) {
 
         }
     }
 
-
-    // RETURN
-
     return (
         <UserContainer>
-            <SectionContainer>
+            <div>
                 <Title>Standard Attributes</Title>
                 <TitledInputBox title={'First Name'} v={firstName} setV={setFirstName} />
                 <TitledInputBox title={'Last Name'} v={lastName} setV={setLastName} />
@@ -120,8 +111,8 @@ function User() {
                 <Title>Custom Attributes</Title>
                 <KeyValueInputBox k={customAttributeKey} setK={setCustomAttributeKey} v={customAttributeValue} setV={setCustomAttributeValue} />
                 <Button onClick={setCustomAttribute}>Submit</Button>
-            </SectionContainer>
-            <SectionContainer>
+            </div>
+            <div>
                 <Title>Events</Title>
                 <TitledInputBox title={'Name'} v={eventName} setV={setEventName} />
                 <TitledInputBox title={'Properties'} v={eventProperties} setV={setEventProperties} />
@@ -133,20 +124,15 @@ function User() {
                 <TitledInputBox title={'Quantity'} v={quantity} setV={setQuantity} />
                 <TitledInputBox title={'Properties'} v={purchaseProperties} setV={setPurchaseProperties} />
                 <Button onClick={setPurchaseEvent}>Submit</Button>
-            </SectionContainer>
+            </div>
         </UserContainer>
     )
 }
-
-// STYLES
 
 const UserContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-`;
-
-const SectionContainer = styled.div`
 `;
 
 const Title = styled.div`
