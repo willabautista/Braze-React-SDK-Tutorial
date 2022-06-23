@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import TitledInputBox from '../components/TitledInputBox';
 import KeyValueInputBox from '../components/KeyValueInputBox';
-import * as braze from "@braze/web-sdk";
 
 function User() {
     const [firstName, setFirstName] = useState('')
@@ -30,66 +29,19 @@ function User() {
     const [purchaseProperties, setPurchaseProperties] = useState('')
 
     const setStandardAttributes = () => {
-        // TODO: set standard attributes 
-
-        if (firstName) {
-        }
-
-        if (lastName) {
-        }
-
-        if (email) {
-        }
-
-        if (country) {
-        }
-
-        if (homeCity) {
-        }
-
-        if (language) {
-        }
-
-        if (gender) {
-        }
-
-        if (phone) {
-        }
-
-        if (birthday) {
-        }
-
-        if (pushSub) {
-        }
-
-        if (emailSub) {
-        }
+        // TODO: set standard attributes
     }
 
     const setCustomAttribute = () => {
         // TODO: set custom attributes
-        if (customAttributeKey && customAttributeValue) {
-
-        }
     }
 
     const setCustomEvent = () => {
         // TODO: log custom events
-        if (eventName) {
-            if (eventProperties) {
-
-            }
-            else {
-
-            }
-        }
     }
 
     const setPurchaseEvent = () => {
         // TODO: log purchase events
-        if (productId && price) {
-
-        }
     }
 
     return (
