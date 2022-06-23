@@ -14,6 +14,9 @@ function App() {
     enableLogging: true
   });
 
+  // TODO: register for push
+  braze.requestPushPermission()
+
   useEffect(() => {
     // TODO: set the user's External ID
     braze.changeUser('1');
@@ -24,13 +27,13 @@ function App() {
     });
     braze.requestContentCardsRefresh();
 
-    // TODO: subscribe to In-App Messages and only display them if a KVP 'display' is true 
+    // TODO: subscribe to In-App Messages and only display them if a KVP 'display' is 'homepage' 
     braze.subscribeToInAppMessage(function (inAppMessage) {
       if (inAppMessage instanceof braze.InAppMessage) {
         const extras = inAppMessage.extras;
         if (extras) {
           for (const key in extras) {
-            if (key == 'display' && extras[key] == true) {
+            if (key == 'display' && extras[key] == 'homepage') {
               braze.showInAppMessage(inAppMessage);
             }
           }
