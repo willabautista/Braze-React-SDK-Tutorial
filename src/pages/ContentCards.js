@@ -5,7 +5,6 @@ import CustomContentCard from '../components/CustomContentCard';
 function ContentCards({ cards }) {
 
     useEffect(() => {
-        // TODO: render the standard content cards feed into the 'content-cards' div
 
     }, [])
 
@@ -14,7 +13,6 @@ function ContentCards({ cards }) {
             <Feed>
                 <div>Custom Feed</div>
                 <Cards>
-                    {/* TODO: loop through cards and only display a CustomContentCard if the KVP 'feed' is 'custom' */}
                 </Cards>
             </Feed>
             <Feed>

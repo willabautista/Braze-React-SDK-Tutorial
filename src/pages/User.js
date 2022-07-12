@@ -6,42 +6,44 @@ import KeyValueInputBox from '../components/KeyValueInputBox';
 function User() {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
+    const [dateOfBirth, setDateOfBirth] = useState('')
     const [email, setEmail] = useState('')
     const [country, setCountry] = useState('')
     const [homeCity, setHomeCity] = useState('')
     const [language, setLanguage] = useState('')
     const [gender, setGender] = useState('')
-    const [phone, setPhone] = useState('')
-    const [birthday, setBirthday] = useState('')
-    const [pushSub, setPushSub] = useState('')
-    const [emailSub, setEmailSub] = useState('')
+    const [phoneNumber, setPhoneNumber] = useState('')
+    const [pushNotificationSubscriptionType, setPushNotificationSubscriptionType] = useState('')
+    const [emailNotificationSubscriptionType, setEmailNotificationSubscriptionType] = useState('')
 
     const [customAttributeKey, setCustomAttributeKey] = useState('')
     const [customAttributeValue, setCustomAttributeValue] = useState('')
 
     const [eventName, setEventName] = useState('')
-    const [eventProperties, setEventProperties] = useState('')
+    const [eventPropertyName, setEventProperyName] = useState('')
+    const [eventPropertyValue, setEventPropertyValue] = useState('')
 
     const [productId, setProductId] = useState('')
     const [price, setPrice] = useState('')
     const [currencyCode, setCurrencyCode] = useState('')
     const [quantity, setQuantity] = useState('')
-    const [purchaseProperties, setPurchaseProperties] = useState('')
+    const [purchasePropertyName, setPurchaseProperyName] = useState('')
+    const [purchasePropertyValue, setPurchasePropertyValue] = useState('')
 
     const setStandardAttributes = () => {
-        // TODO: set standard attributes
+
     }
 
     const setCustomAttribute = () => {
-        // TODO: set custom attributes
+
     }
 
     const setCustomEvent = () => {
-        // TODO: log custom events
+
     }
 
     const setPurchaseEvent = () => {
-        // TODO: log purchase events
+
     }
 
     return (
@@ -50,15 +52,15 @@ function User() {
                 <Title>Standard Attributes</Title>
                 <TitledInputBox title={'First Name'} v={firstName} setV={setFirstName} />
                 <TitledInputBox title={'Last Name'} v={lastName} setV={setLastName} />
+                <TitledInputBox title={'Birthday'} v={dateOfBirth} setV={setDateOfBirth} />
                 <TitledInputBox title={'Email'} v={email} setV={setEmail} />
                 <TitledInputBox title={'Country'} v={country} setV={setCountry} />
                 <TitledInputBox title={'Home City'} v={homeCity} setV={setHomeCity} />
                 <TitledInputBox title={'Lanugage'} v={language} setV={setLanguage} />
                 <TitledInputBox title={'Gender'} v={gender} setV={setGender} />
-                <TitledInputBox title={'Phone'} v={phone} setV={setPhone} />
-                <TitledInputBox title={'Birthday'} v={birthday} setV={setBirthday} />
-                <TitledInputBox title={'Push Sub'} v={pushSub} setV={setPushSub} />
-                <TitledInputBox title={'Email Sub'} v={emailSub} setV={setEmailSub} />
+                <TitledInputBox title={'Phone'} v={phoneNumber} setV={setPhoneNumber} />
+                <TitledInputBox title={'Push Sub'} v={pushNotificationSubscriptionType} setV={setPushNotificationSubscriptionType} />
+                <TitledInputBox title={'Email Sub'} v={emailNotificationSubscriptionType} setV={setEmailNotificationSubscriptionType} />
                 <Button onClick={setStandardAttributes}>Submit</Button>
                 <Title>Custom Attributes</Title>
                 <KeyValueInputBox k={customAttributeKey} setK={setCustomAttributeKey} v={customAttributeValue} setV={setCustomAttributeValue} />
@@ -67,14 +69,16 @@ function User() {
             <div>
                 <Title>Events</Title>
                 <TitledInputBox title={'Name'} v={eventName} setV={setEventName} />
-                <TitledInputBox title={'Properties'} v={eventProperties} setV={setEventProperties} />
+                <SubTitle>Properties</SubTitle>
+                <KeyValueInputBox k={eventPropertyName} setK={setEventProperyName} v={eventPropertyValue} setV={setEventPropertyValue} />
                 <Button onClick={setCustomEvent}>Submit</Button>
                 <Title>Purchases</Title>
                 <TitledInputBox title={'Product Id'} v={productId} setV={setProductId} />
                 <TitledInputBox title={'Price'} v={price} setV={setPrice} />
                 <TitledInputBox title={'Currency Code'} v={currencyCode} setV={setCurrencyCode} />
                 <TitledInputBox title={'Quantity'} v={quantity} setV={setQuantity} />
-                <TitledInputBox title={'Properties'} v={purchaseProperties} setV={setPurchaseProperties} />
+                <SubTitle>Properties</SubTitle>
+                <KeyValueInputBox k={purchasePropertyName} setK={setPurchaseProperyName} v={purchasePropertyValue} setV={setPurchasePropertyValue} />
                 <Button onClick={setPurchaseEvent}>Submit</Button>
             </div>
         </UserContainer>
@@ -91,6 +95,11 @@ const Title = styled.div`
     font-size: 25px;
     padding-top: 60px;
     padding-bottom: 20px;
+`;
+
+const SubTitle = styled.div`
+    margin-top: 15px;
+    margin-bottom: 5px;
 `;
 
 const Button = styled.button`
