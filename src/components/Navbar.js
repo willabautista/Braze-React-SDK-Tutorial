@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import mainLogo from '../assets/Braze-Logotype_White.png';
 
 function Navbar() {
     return (
         <NavbarNav>
             <NavContainer>
                 <LogoLink to='/'>
-                    BRZ
+                    <Logo src={mainLogo} />
                 </LogoLink>
                 <NavMenu>
                     <NavItem>
@@ -49,6 +50,12 @@ const LogoLink = styled(Link)`
     font-size: 2rem;
     display: flex;
     align-items: center;
+`;
+
+const Logo = styled.img`
+    height: 40px;
+    width: 80px;
+    margin-top: 10px;
 `;
 
 const NavMenu = styled.div`
