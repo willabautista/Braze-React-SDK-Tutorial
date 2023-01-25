@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import TitledInputBox from '../components/TitledInputBox';
 import KeyValueInputBox from '../components/KeyValueInputBox';
+import * as braze from "@braze/web-sdk";
 
 function User() {
     const [firstName, setFirstName] = useState('')
@@ -31,19 +32,50 @@ function User() {
     const [purchasePropertyValue, setPurchasePropertyValue] = useState('')
 
     const setStandardAttributes = () => {
-
+        if (firstName) {
+            braze.getUser().setFirstName(firstName);
+        }
+        if (lastName) {
+            braze.getUser().setLastName(lastName);
+        }
+        if (dateOfBirth) {
+            let splitDateOfBirth = dateOfBirth.split("/");
+            braze.getUser().setDateOfBirth(parseInt(splitDateOfBirth[2]), parseInt(splitDateOfBirth[0]), parseInt(splitDateOfBirth[1]))
+        }
     }
 
     const setCustomAttribute = () => {
-
+        if (customAttributeKey && customAttributeValue) {
+            braze.getUser().setCustomUserAttribute(customAttributeKey, customAttributeValue);
+        }
     }
 
     const setCustomEvent = () => {
+        if (eventName) {
+            if (eventPropertyName && eventPropertyValue) {
+                let eventProperties = {}
+                eventProperties[eventPropertyName] = eventPropertyValue
 
+                braze.logCustomEvent(eventName, eventProperties)
+            }
+            else {
+                braze.logCustomEvent(eventName)
+            }
+        }
     }
 
     const setPurchaseEvent = () => {
+        if (productId && price) {
+            if (purchasePropertyName && purchasePropertyValue) {
+                let purchaseProperties = {}
+                purchaseProperties[purchasePropertyName] = purchasePropertyValue
 
+                braze.logPurchase(productId, price, currencyCode, quantity, purchaseProperties)
+            }
+            else {
+                braze.logPurchase(productId, price, currencyCode, quantity)
+            }
+        }
     }
 
     return (
@@ -56,7 +88,7 @@ function User() {
                 <TitledInputBox title={'Email'} v={email} setV={setEmail} />
                 <TitledInputBox title={'Country'} v={country} setV={setCountry} />
                 <TitledInputBox title={'Home City'} v={homeCity} setV={setHomeCity} />
-                <TitledInputBox title={'Lanugage'} v={language} setV={setLanguage} />
+                <TitledInputBox title={'Language'} v={language} setV={setLanguage} />
                 <TitledInputBox title={'Gender'} v={gender} setV={setGender} />
                 <TitledInputBox title={'Phone'} v={phoneNumber} setV={setPhoneNumber} />
                 <TitledInputBox title={'Push Sub'} v={pushNotificationSubscriptionType} setV={setPushNotificationSubscriptionType} />
