@@ -18,7 +18,7 @@ function ContentCards({ cards }) {
             <Feed>
                 <div>Standard Feed</div>
                 <Cards>
-                    <div id={'content-cards'} />
+                    <div id={'standard-feed'} />
                 </Cards>
             </Feed>
         </ContentCardsContainer>

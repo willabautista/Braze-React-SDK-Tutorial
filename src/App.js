@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import User from './pages/User';
@@ -6,6 +7,7 @@ import ContentCards from './pages/ContentCards';
 
 function App() {
   const [cards, setCards] = useState([]);
+  const [pushRequested, setPushRequested] = useState(true);
 
   useEffect(() => {
 
@@ -14,6 +16,9 @@ function App() {
   return (
     <Router>
       <Navbar />
+      <PushPermissionContainer>
+        <PushPermissionButton disabled={pushRequested}>Request Push Permission</PushPermissionButton>
+      </PushPermissionContainer>
       <Routes>
         <Route path='/' element={<User />} />
         <Route path='/contentcards' element={<ContentCards cards={cards} />} />
@@ -21,5 +26,16 @@ function App() {
     </Router>
   );
 }
+
+const PushPermissionContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+`;
+
+const PushPermissionButton = styled.button`
+    margin-top: 20px;
+    margin-right: 20px;
+`;
 
 export default App;
