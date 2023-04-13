@@ -17,7 +17,7 @@ function App() {
     <Router>
       <Navbar />
       <PushPermissionContainer>
-        <PushPermissionButton onClick={requestPushPermission} disabled={pushRequested}>Request Push Permission</PushPermissionButton>
+        <PushPermissionButton disabled={pushRequested}>Request Push Permission</PushPermissionButton>
       </PushPermissionContainer>
       <Routes>
         <Route path='/' element={<User />} />
