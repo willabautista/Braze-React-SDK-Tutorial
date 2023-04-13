@@ -2,17 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-function KeyValueInputBox({ k, setK, v, setV }) {
+function KeyValueInputBox({ key, setKey, value, setValue }) {
 
     return (
         <Container>
             <SectionContainer>
                 <div>Name</div>
-                <input value={k} onChange={e => setK(e.target.value)} />
+                <input value={key} onChange={e => setKey(e.target.value)} />
             </SectionContainer>
             <SectionContainer>
                 <div>Value</div>
-                <input value={v} onChange={e => setV(e.target.value)} />
+                <input value={value} onChange={e => setValue(e.target.value)} />
             </SectionContainer>
         </Container>
     );
