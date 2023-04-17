@@ -7,7 +7,7 @@ import ContentCards from './pages/ContentCards';
 
 function App() {
   const [cards, setCards] = useState([]);
-  const [pushRequested, setPushRequested] = useState(true);
+  const [isPushPromptEligible, setIsPushPromptEligible] = useState(true);
 
   useEffect(() => {
 
@@ -17,7 +17,7 @@ function App() {
     <Router>
       <Navbar />
       <PushPermissionContainer>
-        <PushPermissionButton disabled={pushRequested}>Request Push Permission</PushPermissionButton>
+        <PushPermissionButton disabled={!isPushPromptEligible}>Request Push Permission</PushPermissionButton>
       </PushPermissionContainer>
       <Routes>
         <Route path='/' element={<User />} />
