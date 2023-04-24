@@ -50,35 +50,35 @@ function User() {
         <UserContainer>
             <div>
                 <Title>Standard Attributes</Title>
-                <TitledInputBox title={'First Name'} v={firstName} setV={setFirstName} />
-                <TitledInputBox title={'Last Name'} v={lastName} setV={setLastName} />
-                <TitledInputBox title={'Birthday'} v={dateOfBirth} setV={setDateOfBirth} />
-                <TitledInputBox title={'Email'} v={email} setV={setEmail} />
-                <TitledInputBox title={'Country'} v={country} setV={setCountry} />
-                <TitledInputBox title={'Home City'} v={homeCity} setV={setHomeCity} />
-                <TitledInputBox title={'Language'} v={language} setV={setLanguage} />
-                <TitledInputBox title={'Gender'} v={gender} setV={setGender} />
-                <TitledInputBox title={'Phone'} v={phoneNumber} setV={setPhoneNumber} />
-                <TitledInputBox title={'Push Sub'} v={pushNotificationSubscriptionType} setV={setPushNotificationSubscriptionType} />
-                <TitledInputBox title={'Email Sub'} v={emailNotificationSubscriptionType} setV={setEmailNotificationSubscriptionType} />
+                <TitledInputBox title={'First Name'} value={firstName} setValue={setFirstName} />
+                <TitledInputBox title={'Last Name'} value={lastName} setValue={setLastName} />
+                <TitledInputBox title={'Birthday'} value={dateOfBirth} setValue={setDateOfBirth} />
+                <TitledInputBox title={'Email'} value={email} setValue={setEmail} />
+                <TitledInputBox title={'Country'} value={country} setValue={setCountry} />
+                <TitledInputBox title={'Home City'} value={homeCity} setValue={setHomeCity} />
+                <TitledInputBox title={'Language'} value={language} setValue={setLanguage} />
+                <TitledInputBox title={'Gender'} value={gender} setValue={setGender} />
+                <TitledInputBox title={'Phone'} value={phoneNumber} setValue={setPhoneNumber} />
+                <TitledInputBox title={'Push Sub'} value={pushNotificationSubscriptionType} setValue={setPushNotificationSubscriptionType} />
+                <TitledInputBox title={'Email Sub'} value={emailNotificationSubscriptionType} setValue={setEmailNotificationSubscriptionType} />
                 <Button onClick={setStandardAttributes}>Submit</Button>
                 <Title>Custom Attributes</Title>
-                <KeyValueInputBox k={customAttributeKey} setK={setCustomAttributeKey} v={customAttributeValue} setV={setCustomAttributeValue} />
+                <KeyValueInputBox k={customAttributeKey} setKey={setCustomAttributeKey} value={customAttributeValue} setValue={setCustomAttributeValue} />
                 <Button onClick={setCustomAttribute}>Submit</Button>
             </div>
             <div>
                 <Title>Events</Title>
-                <TitledInputBox title={'Name'} v={eventName} setV={setEventName} />
+                <TitledInputBox title={'Name'} value={eventName} setValuealue={setEventName} />
                 <SubTitle>Properties</SubTitle>
-                <KeyValueInputBox k={eventPropertyName} setK={setEventProperyName} v={eventPropertyValue} setV={setEventPropertyValue} />
+                <KeyValueInputBox k={eventPropertyName} setKey={setEventProperyName} value={eventPropertyValue} setValue={setEventPropertyValue} />
                 <Button onClick={setCustomEvent}>Submit</Button>
                 <Title>Purchases</Title>
-                <TitledInputBox title={'Product Id'} v={productId} setV={setProductId} />
-                <TitledInputBox title={'Price'} v={price} setV={setPrice} />
-                <TitledInputBox title={'Currency Code'} v={currencyCode} setV={setCurrencyCode} />
-                <TitledInputBox title={'Quantity'} v={quantity} setV={setQuantity} />
+                <TitledInputBox title={'Product Id'} value={productId} setValue={setProductId} />
+                <TitledInputBox title={'Price'} value={price} setValue={setPrice} />
+                <TitledInputBox title={'Currency Code'} value={currencyCode} setValue={setCurrencyCode} />
+                <TitledInputBox title={'Quantity'} value={quantity} setValue={setQuantity} />
                 <SubTitle>Properties</SubTitle>
-                <KeyValueInputBox k={purchasePropertyName} setK={setPurchaseProperyName} v={purchasePropertyValue} setV={setPurchasePropertyValue} />
+                <KeyValueInputBox k={purchasePropertyName} setKey={setPurchaseProperyName} value={purchasePropertyValue} setValue={setPurchasePropertyValue} />
                 <Button onClick={setPurchaseEvent}>Submit</Button>
             </div>
         </UserContainer>
