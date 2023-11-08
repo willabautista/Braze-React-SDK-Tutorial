@@ -68,7 +68,7 @@ function User() {
             </div>
             <div>
                 <Title>Events</Title>
-                <TitledInputBox title={'Name'} value={eventName} setValuealue={setEventName} />
+                <TitledInputBox title={'Name'} value={eventName} setValue={setEventName} />
                 <SubTitle>Properties</SubTitle>
                 <KeyValueInputBox k={eventPropertyName} setKey={setEventProperyName} value={eventPropertyValue} setValue={setEventPropertyValue} />
                 <Button onClick={setCustomEvent}>Submit</Button>
